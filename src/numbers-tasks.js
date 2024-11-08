@@ -648,10 +648,18 @@ function getHypotenuse(a, b) {
  * 15 => 8
  */
 function getCountOfOddNumbers(number) {
-  if (number < 1) {
-    return 0;
+  const start = Math.min(0, number);
+  const end = Math.max(0, number);
+
+  let count = 0;
+
+  for (let i = start; i <= end; i += 1) {
+    if (i % 2 !== 0) {
+      count += 1;
+    }
   }
-  return Math.floor(number / 2) + 1;
+
+  return count;
 }
 
 module.exports = {
